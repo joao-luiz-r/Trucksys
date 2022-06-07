@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using TruckSys.Infra.Data;
+using Microsoft.Extensions.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -27,7 +28,7 @@ using (var scope = app.Services.CreateScope())
 {
     var services = scope.ServiceProvider;
 
-    var context = services.GetRequiredService<TruckContext>();
+    var context = services.GetRequiredService<TruckSys.Infra.Data.TruckContext>();
     context.Database.EnsureCreated();
 }
 

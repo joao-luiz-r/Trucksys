@@ -25,3 +25,4 @@ namespace TruckSys.Infra.Data
         }
     }
 }
+
