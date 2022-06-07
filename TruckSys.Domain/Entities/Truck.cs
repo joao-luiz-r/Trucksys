@@ -1,11 +1,16 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace TruckSys.Models
+namespace TruckSys.Entities
 {
     [Table("Truck")]
     public class Truck
     {
+        public Truck()
+        {
+
+        }
+
         [Key]
         [Column("Id")]
         [Display(Name ="Código")]
