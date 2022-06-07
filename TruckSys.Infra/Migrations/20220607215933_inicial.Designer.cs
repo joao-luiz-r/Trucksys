@@ -11,7 +11,7 @@ using TruckSys.Infra.Data;
 namespace TruckSys.Infra.Migrations
 {
     [DbContext(typeof(TruckContext))]
-    [Migration("20220607185449_inicial")]
+    [Migration("20220607215933_inicial")]
     partial class inicial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
