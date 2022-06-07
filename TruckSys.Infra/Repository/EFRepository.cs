@@ -31,9 +31,9 @@ namespace TruckSys.Infra.Repository
             _truckContext.SaveChanges();
         }
 
-        public IEnumerable<T> Search(System.Linq.Expressions.Expression<Func<T, bool>> predicado)
+        public IEnumerable<T> Search(System.Linq.Expressions.Expression<Func<T, bool>> predicate)
         {
-            return _truckContext.Set<T>().Where(predicado).AsEnumerable();
+            return _truckContext.Set<T>().Where(predicate).AsEnumerable();
         }
 
         public T GetById(int id)

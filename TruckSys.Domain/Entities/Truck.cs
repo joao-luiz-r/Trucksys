@@ -8,7 +8,7 @@ namespace TruckSys.Entities
     {
         public Truck()
         {
-
+            errormessages = new List<string>();
         }
 
         [Key]
@@ -28,5 +28,8 @@ namespace TruckSys.Entities
         [Column("AnoModelo")]
         [Display(Name = "Ano do Modelo")]
         public int AnoModelo { get; set; }
+
+        [NotMapped]
+        public List<string> errormessages { get; set; }
     }
 }
