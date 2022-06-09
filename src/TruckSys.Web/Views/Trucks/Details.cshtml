@@ -1,0 +1,36 @@
+﻿@model TruckSys.Entities.Truck
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Detalhes do Caminhão</title>
+</head>
+<body>
+
+<div>
+    <h4>Truck</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Modelo): @Html.DisplayFor(model => model.Modelo)
+        </dt>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.AnoFabricacao): @Html.DisplayFor(model => model.AnoFabricacao)
+        </dt>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.AnoModelo): @Html.DisplayFor(model => model.AnoModelo)
+        </dt>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.Id">Editar</a> |
+    <a asp-action="Index">Voltar à lista</a>
+</div>
+</body>
+</html>
