@@ -13,7 +13,6 @@ namespace TruckSys.Web.Controllers
             _service = service;
         }
 
-        // GET: Trucks
         public IActionResult Index()
         {
             return _service.GetAll() != null ?
@@ -21,7 +20,6 @@ namespace TruckSys.Web.Controllers
                         Problem("Nenhum caminhão cadastrado.");
         }
 
-        // GET: Trucks/Details/5
         public IActionResult Details(int? id)
         {
             if (id == null || _service.GetAll() == null)
@@ -39,16 +37,12 @@ namespace TruckSys.Web.Controllers
             return View(truck);
         }
 
-        // GET: Trucks/Create
         public IActionResult Create()
         {
             var truck = new Truck();
             return View(truck);
         }
 
-        // POST: Trucks/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult Create([Bind("Modelo,AnoFabricacao,AnoModelo")] Truck truck)
@@ -60,7 +54,6 @@ namespace TruckSys.Web.Controllers
             return View(truck);
         }
 
-        // GET: Trucks/Edit/5
         public IActionResult Edit(int? id)
         {
             if (id == null || _service.GetById((int)id) == null)
@@ -76,9 +69,6 @@ namespace TruckSys.Web.Controllers
             return View(truck);
         }
 
-        // POST: Trucks/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult Edit(int id, [Bind("Id,Modelo,AnoFabricacao,AnoModelo")] Truck truck)
@@ -89,7 +79,6 @@ namespace TruckSys.Web.Controllers
             return View(truck);
         }
 
-        // GET: Trucks/Delete/5
         public IActionResult Delete(int? id)
         {
             if (id == null || _service.GetById((int)id) == null)
@@ -106,7 +95,6 @@ namespace TruckSys.Web.Controllers
             return View(truck);
         }
 
-        // POST: Trucks/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)

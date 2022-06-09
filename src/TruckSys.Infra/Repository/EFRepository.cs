@@ -1,15 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using TruckSys.Domain.Interfaces.Repository;
 using TruckSys.Infra.Data;
 
 namespace TruckSys.Infra.Repository
 {
-    public class EFRepository<T> : IRepository<T> where T : class
+    public class EFRepository<T> : IEFRepository<T> where T : class
     {
         protected readonly TruckContext _truckContext;
 
